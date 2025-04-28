@@ -11,3 +11,26 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+ * Copies up to dstsize - 1 characters from src to dst,
+ * NUL-terminating the result if dstsize > 0.
+ * Returns the total length of src.
+ */
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	size_t	src_len;
+	size_t	i;
+
+	src_len = ft_strlen(src);
+	if (dstsize == 0)
+		return (src_len);
+	i = 0;
+	while (src[i] && i < dstsize - 1)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (src_len);
+}

@@ -11,3 +11,12 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int	ft_toupper(int c)
+{
+	unsigned char uc = (unsigned char)c;
+
+	if (uc >= 'a' && uc <= 'z')
+		return (uc - 'a' + 'A');
+	return (c);
+}

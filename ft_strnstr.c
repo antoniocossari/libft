@@ -3,33 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:10:40 by acossari          #+#    #+#             */
-/*   Updated: 2025/04/24 16:10:43 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/02 23:38:34 by antoniocoss      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
+ * ft_strnstr:
+ *   Locate the first occurrence of the null-terminated string `little`
+ *   within `big`, searching at most `len` characters. If `little` is
+ *   empty, return `big`; if not found within the first `len` bytes,
+ *   return NULL.
+ */
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
-	/* Se needle è stringa vuota, ritorna haystack */
 	if (*needle == '\0')
 		return ((char *)haystack);
 	i = 0;
 	while (i < len && haystack[i])
 	{
 		j = 0;
-		/* Confronta caratteri finché sono uguali e rientrano in len */
 		while (i + j < len
 			&& needle[j]
 			&& haystack[i + j] == needle[j])
 			j++;
-		/* Se abbiamo consumato tutta needle, la troviamo */
 		if (needle[j] == '\0')
 			return ((char *)haystack + i);
 		i++;

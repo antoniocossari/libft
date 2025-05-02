@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:09:35 by acossari          #+#    #+#             */
-/*   Updated: 2025/04/30 18:00:25 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/02 23:13:58 by antoniocoss      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
+ * ft_memchr:
+ *   Scan the first `n` bytes of memory area `s` for the byte `c`,
+ *   returning a pointer to the matching byte or NULL if not found.
+ */
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t				i;

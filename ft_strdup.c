@@ -3,15 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:10:09 by acossari          #+#    #+#             */
-/*   Updated: 2025/04/24 16:10:11 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/02 23:31:05 by antoniocoss      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
+ * ft_strdup:
+ *   Allocate memory and return a duplicate of the string `s1`.
+ *   Memory is obtained with malloc and must be freed by the caller.
+ *   Returns NULL if allocation fails.
+ */
 char	*ft_strdup(const char *s1)
 {
 	char	*copy;
@@ -31,4 +36,3 @@ char	*ft_strdup(const char *s1)
 	copy[i] = '\0';
 	return (copy);
 }
-

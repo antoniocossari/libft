@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 18:52:15 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/01 16:41:56 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/02 23:29:54 by antoniocoss      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,13 @@ static char	**free_split(char **array, size_t allocated)
 	return (NULL);
 }
 
-/* ft_split: divide la stringa s in un array di stringhe usando c come delimitatore */
+/*
+ * ft_split:
+ *   Split the string `s` into an array of strings, using `c` as delimiter.
+ *   Allocate memory for the array and each substring with malloc.
+ *   The array is terminated by a NULL pointer.
+ *   Returns NULL if `s` is NULL or an allocation fails.
+ */
 char	**ft_split(char const *s, char c)
 {
 	size_t	i = 0;
@@ -68,14 +74,12 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	while (w < words)
 	{
-		/* salta i delimitatori fino all’inizio della parola */
 		while (s[i] && s[i] == c)
 			i++;
 		len = word_len(s + i, c);
 		array[w] = malloc(len + 1);
 		if (!array[w])
 			return (free_split(array, w));
-		/* copia la parola e aggiunge il terminatore */
 		ft_memcpy(array[w], s + i, len);
 		array[w][len] = '\0';
 		i += len;

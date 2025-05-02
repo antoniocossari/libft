@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 18:53:27 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/01 17:32:27 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/02 23:12:08 by antoniocoss      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,13 @@ static size_t	get_len(long nbr)
 	return (len);
 }
 
+/*
+ * ft_itoa:
+ *   Convert the integer `n` to a null-terminated string.
+ *   Handles `0` by returning "0" and negative values by
+ *   prepending '-'. Allocates memory with malloc;
+ *   caller must free the returned string.
+ */
 char	*ft_itoa(int n)
 {
 	long	nbr;

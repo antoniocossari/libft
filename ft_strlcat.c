@@ -3,20 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:10:15 by acossari          #+#    #+#             */
-/*   Updated: 2025/04/24 16:10:17 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/02 23:34:11 by antoniocoss      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 /*
- * Appends src to string dst of size dstsize (like strncat but safer).
- * It will append at most dstsize - strlen(dst) - 1 characters,
- * NUL-terminating the result.
- * Returns the initial length of dst plus the length of src.
+ * ft_strlcat:
+ *   Append `src` to the end of `dst` of total size `dstsize`,
+ *   NUL-terminating the result if space permits.
+ *   Returns the initial length of `dst` plus length of `src`.
  */
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

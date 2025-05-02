@@ -1,32 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/24 16:08:37 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/01 16:43:28 by acossari         ###   ########.fr       */
+/*   Created: 2025/04/30 18:44:46 by acossari          #+#    #+#             */
+/*   Updated: 2025/04/30 18:47:48 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	total;
-	void	*ptr;
+	size_t	len1;
+	size_t	len2;
+	size_t	i;
+	char	*res;
 
-	/* Evitiamo overflow in nmemb * size */
-	if (size != 0 && nmemb > ((size_t)-1) / size)
+	if (!s1 || !s2)
 		return (NULL);
-	/* Calcoliamo il numero totale di byte da allocare */
-	total = nmemb * size;
-	/* Se nmemb o size è 0, malloc(0) può restituire NULL o un puntatore liberabile */
-	ptr = malloc(total);
-	if (!ptr)
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	res = malloc(len1 + len2 + 1);
+	if (!res)
 		return (NULL);
-	/* Inizializziamo a zero tutti i byte allocati */
-	ft_memset(ptr, 0, total);
-	return (ptr);
+	i = 0;
+	while (i < len1)
+	{
+		res[i] = s1[i];
+		i++;
+	}
+	i = 0;
+	while (i < len2)
+	{
+		res[len1 + i] = s2[i];
+		i++;
+	}
+	res[len1 + len2] = '\0';
+	return (res);
 }

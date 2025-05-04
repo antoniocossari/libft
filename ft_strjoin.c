@@ -6,7 +6,7 @@
 /*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 18:44:46 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/02 23:36:59 by antoniocoss      ###   ########.fr       */
+/*   Updated: 2025/05/04 12:48:16 by antoniocoss      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	len1;
 	size_t	len2;
-	size_t	i;
 	char	*res;
 
 	if (!s1 || !s2)
@@ -31,18 +30,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	res = malloc(len1 + len2 + 1);
 	if (!res)
 		return (NULL);
-	i = 0;
-	while (i < len1)
-	{
-		res[i] = s1[i];
-		i++;
-	}
-	i = 0;
-	while (i < len2)
-	{
-		res[len1 + i] = s2[i];
-		i++;
-	}
-	res[len1 + len2] = '\0';
+	ft_strlcpy(res, s1, len1 + 1);
+	ft_strlcat(res, s2, len1 + len2 + 1);
 	return (res);
 }

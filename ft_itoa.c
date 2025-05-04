@@ -6,23 +6,25 @@
 /*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 18:53:27 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/02 23:12:08 by antoniocoss      ###   ########.fr       */
+/*   Updated: 2025/05/04 16:08:16 by antoniocoss      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* restituisce il numero di cifre necessarie per rappresentare nbr */
-static size_t	get_len(long nbr)
+/* get_len:
+ *   returns how many characters are needed for nbr (incl. '-' e '\0')
+ */
+static size_t	get_len(long n)
 {
 	size_t	len;
 
 	len = 0;
-	if (nbr <= 0)
+	if (n <= 0)
 		len = 1;
-	while (nbr != 0)
+	while (n)
 	{
-		nbr /= 10;
+		n /= 10;
 		len++;
 	}
 	return (len);
@@ -39,7 +41,6 @@ char	*ft_itoa(int n)
 {
 	long	nbr;
 	size_t	len;
-	size_t	i;
 	char	*res;
 
 	nbr = n;
@@ -47,20 +48,18 @@ char	*ft_itoa(int n)
 	res = malloc(len + 1);
 	if (!res)
 		return (NULL);
-	res[len] = '\0';
 	if (nbr < 0)
 	{
 		res[0] = '-';
 		nbr = -nbr;
 	}
+	res[len] = '\0';
 	if (nbr == 0)
 		res[0] = '0';
-	i = len - 1;
-	while (nbr > 0)
+	while (nbr)
 	{
-		res[i] = '0' + (nbr % 10);
+		res[--len] = '0' + (nbr % 10);
 		nbr /= 10;
-		i--;
 	}
 	return (res);
 }

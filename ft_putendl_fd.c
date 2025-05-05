@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
+/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 19:33:22 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/02 23:17:41 by antoniocoss      ###   ########.fr       */
+/*   Updated: 2025/05/05 19:58:00 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

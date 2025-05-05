@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
+/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 18:50:02 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/02 23:40:11 by antoniocoss      ###   ########.fr       */
+/*   Updated: 2025/05/05 19:58:11 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

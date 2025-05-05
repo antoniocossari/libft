@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
+/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:09:35 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/02 23:13:58 by antoniocoss      ###   ########.fr       */
+/*   Updated: 2025/05/05 19:57:57 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

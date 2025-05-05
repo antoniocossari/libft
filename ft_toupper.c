@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
+/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:10:59 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/02 23:42:19 by antoniocoss      ###   ########.fr       */
+/*   Updated: 2025/05/05 19:58:11 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

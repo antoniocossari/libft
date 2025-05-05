@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
+/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:10:47 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/02 23:39:17 by antoniocoss      ###   ########.fr       */
+/*   Updated: 2025/05/05 19:58:09 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

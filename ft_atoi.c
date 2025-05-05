@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
+/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:08:16 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/02 22:36:31 by antoniocoss      ###   ########.fr       */
+/*   Updated: 2025/05/05 19:57:47 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

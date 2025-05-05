@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
+/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:09:23 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/02 23:02:32 by antoniocoss      ###   ########.fr       */
+/*   Updated: 2025/05/05 19:57:54 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

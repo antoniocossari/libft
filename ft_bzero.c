@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
+/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:08:27 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/02 22:37:00 by antoniocoss      ###   ########.fr       */
+/*   Updated: 2025/05/05 19:57:52 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

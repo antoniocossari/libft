@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
+/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:09:52 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/04 15:50:21 by antoniocoss      ###   ########.fr       */
+/*   Updated: 2025/05/05 19:58:00 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

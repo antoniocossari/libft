@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
+/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 19:34:30 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/02 23:18:08 by antoniocoss      ###   ########.fr       */
+/*   Updated: 2025/05/05 19:58:01 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

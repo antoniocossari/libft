@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
+/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 18:53:27 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/04 16:11:23 by antoniocoss      ###   ########.fr       */
+/*   Updated: 2025/05/05 19:57:57 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

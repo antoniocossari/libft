@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
+/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 18:52:15 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/04 13:24:48 by antoniocoss      ###   ########.fr       */
+/*   Updated: 2025/05/05 19:58:02 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

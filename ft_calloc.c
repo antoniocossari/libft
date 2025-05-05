@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
+/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:08:37 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/02 22:43:55 by antoniocoss      ###   ########.fr       */
+/*   Updated: 2025/05/05 19:57:53 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
+/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:09:00 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/02 22:53:10 by antoniocoss      ###   ########.fr       */
+/*   Updated: 2025/05/05 19:57:56 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

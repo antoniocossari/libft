@@ -6,11 +6,24 @@
 /*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 18:52:15 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/05 19:58:02 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/06 13:18:12 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+ * word_len:
+ *   returns the number of characters until the next delimiter or
+ *   end‐of‐string
+ */
+static size_t	word_len(const char *s, char c)
+{
+	size_t len = 0;
+	while (s[len] && s[len] != c)
+		len++;
+	return (len);
+}
 
 /* count_words:
  *   counts the number of words in s separated by the delimiter c

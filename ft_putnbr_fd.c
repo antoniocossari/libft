@@ -6,16 +6,16 @@
 /*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 19:34:30 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/01 19:34:33 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/05 19:58:01 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 /*
  * ft_putnbr_fd:
- * Scrive l’intero n sul file descriptor fd.
- * Gestisce anche i valori negativi.
+ *   Write the integer `n` to the file descriptor `fd` as ASCII.
+ *   Handles negative values by outputting '-' and using recursion
+ *   to print each digit via ft_putchar_fd.
  */
 void	ft_putnbr_fd(int n, int fd)
 {

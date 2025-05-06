@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 18:03:07 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/01 18:55:44 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/02 23:35:31 by antoniocoss      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,12 @@
 // 	return (c);
 // }
 
-
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))  //f e un puntatore a funzione con firma char f(unsigned int i, char c)
+/*
+ * ft_strmapi:
+ *   Apply function `f` to each character of `s`, with index `i`,
+ *   and return a new malloc’ed string of the results.
+ */
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t			len;
 	unsigned int	i;
@@ -62,4 +66,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))  //f e un puntato
 // 	free(t);
 // 	return (0);
 // }
-

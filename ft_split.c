@@ -6,18 +6,35 @@
 /*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 18:52:15 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/01 16:41:56 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/06 13:18:12 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* conta quante parole separate da 'c' ci sono in s */
+/*
+ * word_len:
+ *   returns the number of characters until the next delimiter or
+ *   end‐of‐string
+ */
+static size_t	word_len(const char *s, char c)
+{
+	size_t len = 0;
+	while (s[len] && s[len] != c)
+		len++;
+	return (len);
+}
+
+/* count_words:
+ *   counts the number of words in s separated by the delimiter c
+ */
 static size_t	count_words(const char *s, char c)
 {
-	size_t	i = 0;
-	size_t	count = 0;
+	size_t	i;
+	size_t	count;
 
+	i = 0;
+	count = 0;
 	while (s[i])
 	{
 		while (s[i] && s[i] == c)
@@ -32,55 +49,46 @@ static size_t	count_words(const char *s, char c)
 	return (count);
 }
 
-/* calcola la lunghezza della parola inizio in s fino a 'c' o '\0' */
-static size_t	word_len(const char *s, char c)
+/* free_split:
+ *   frees all previously allocated words in case of an allocation failure
+ */
+static char	**free_split(char **arr, size_t used)
 {
-	size_t	len = 0;
-
-	while (s[len] && s[len] != c)
-		len++;
-	return (len);
-}
-
-/* libera in caso di fallimento tutte le parole già allocate */
-static char	**free_split(char **array, size_t allocated)
-{
-	while (allocated--)
-		free(array[allocated]);
-	free(array);
+	while (used-- > 0)
+		free(arr[used]);
+	free(arr);
 	return (NULL);
 }
 
-/* ft_split: divide la stringa s in un array di stringhe usando c come delimitatore */
+/*
+ * ft_split:
+ *   Split the string `s` into an array of substrings using `c` as delimiter.
+ *   Uses ft_substr to allocate and copy each word.
+ */
 char	**ft_split(char const *s, char c)
 {
-	size_t	i = 0;
-	size_t	w = 0;
+	size_t	i;
+	size_t	w;
 	size_t	words;
-	size_t	len;
-	char	**array;
+	char	**arr;
 
 	if (!s)
 		return (NULL);
 	words = count_words(s, c);
-	array = malloc((words + 1) * sizeof(char *));
-	if (!array)
+	arr = malloc((words + 1) * sizeof(char *));
+	if (!arr)
 		return (NULL);
+	i = 0;
+	w = 0;
 	while (w < words)
 	{
-		/* salta i delimitatori fino all’inizio della parola */
 		while (s[i] && s[i] == c)
 			i++;
-		len = word_len(s + i, c);
-		array[w] = malloc(len + 1);
-		if (!array[w])
-			return (free_split(array, w));
-		/* copia la parola e aggiunge il terminatore */
-		ft_memcpy(array[w], s + i, len);
-		array[w][len] = '\0';
-		i += len;
-		w++;
+		arr[w] = ft_substr(s, i, word_len(s + i, c));
+		if (!arr[w++])
+			return (free_split(arr, w - 1));
+		i += word_len(s + i, c);
 	}
-	array[w] = NULL;
-	return (array);
+	arr[w] = NULL;
+	return (arr);
 }

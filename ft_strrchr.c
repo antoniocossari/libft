@@ -6,39 +6,29 @@
 /*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:10:47 by acossari          #+#    #+#             */
-/*   Updated: 2025/04/24 16:10:49 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/05 19:58:09 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 /*
  * ft_strrchr:
- * Cerca l'ultima occorrenza del carattere 'c' (convertito in char)
- * nella stringa terminata da '\0' puntata da 's'.
- *
- * Parametri:
- *   s - puntatore alla stringa in cui cercare
- *   c - carattere da cercare (passato come int, ma confrontato come char)
- *
- * Ritorno:
- *   Puntatore all'ultima occorrenza di 'c' in 's', o NULL se non trovata.
+ *   Locate the last occurrence of character `c` in the string `s`.
+ *   The terminating null byte is considered part of the string.
+ *   Return a pointer to the matching byte or NULL if not found.
  */
 char	*ft_strrchr(const char *s, int c)
 {
 	const char	*last = NULL;
 
-	/* Scorri tutta la stringa, inclusi i caratteri '\0' */
 	while (*s)
 	{
 		if (*s == (char)c)
-			last = s;             // aggiorna ogni volta che trovi 'c'
+			last = s;
 		s++;
 	}
-	/* Controllo finale sul terminatore '\0' */
 	if ((char)c == '\0')
 		return ((char *)s);
-	/* Se hai trovato almeno un'occorrenza, torna l'ultima */
 	if (last)
 		return ((char *)last);
 	return (NULL);

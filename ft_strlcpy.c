@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:10:21 by acossari          #+#    #+#             */
-/*   Updated: 2025/04/24 16:10:24 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/02 23:34:42 by antoniocoss      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 /*
- * Copies up to dstsize - 1 characters from src to dst,
- * NUL-terminating the result if dstsize > 0.
- * Returns the total length of src.
+ * ft_strlcpy:
+ *   Copy up to dstsize-1 bytes from `src` to `dst`, NUL-terminating `dst`.
+ *   Returns the total length of `src`; if ≥ dstsize, truncation occurred.
  */
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

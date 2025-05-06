@@ -6,15 +6,16 @@
 /*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 19:30:35 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/01 19:32:23 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/05 19:58:01 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 /*
  * ft_putstr_fd:
- * Scrive la stringa s sul file descriptor fd.
+ *   Write string `s` to file descriptor `fd` in one call.
+ *   Uses ft_strlen to determine length; writes all bytes.
+ *   Does nothing if `s` is NULL.
  */
 void	ft_putstr_fd(char *s, int fd)
 {

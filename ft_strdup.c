@@ -6,12 +6,17 @@
 /*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:10:09 by acossari          #+#    #+#             */
-/*   Updated: 2025/04/24 16:10:11 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/05 19:58:08 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
+ * ft_strdup:
+ *   Allocate memory and return a duplicate of the string `s1`.
+ *   Memory is obtained with malloc and must be freed by the caller.
+ *   Returns NULL if allocation fails.
+ */
 char	*ft_strdup(const char *s1)
 {
 	char	*copy;
@@ -31,4 +36,3 @@ char	*ft_strdup(const char *s1)
 	copy[i] = '\0';
 	return (copy);
 }
-

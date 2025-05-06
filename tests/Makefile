@@ -6,40 +6,42 @@
 #    By: acossari <acossari@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/06 12:24:26 by acossari          #+#    #+#              #
-#    Updated: 2025/05/06 12:24:58 by acossari         ###   ########.fr        #
+#    Updated: 2025/05/06 20:06:03 by acossari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# tests/Makefile — for local tests only
+# tests/Makefile — for local tests only; do NOT submit this file
 
-# Compiler settings
-CC      =	cc
-CFLAGS  =	-Wall -Wextra -Werror
+# 1) Disable all built-in suffix rules so we only use our explicit ones
+.SUFFIXES:
 
-# Path to libft static library and include directory
-LIBFT   =	../libft.a
-INC     =	-I ..
+# 2) Compiler settings (include parent dir for libft.h)
+CC		=	cc
+CFLAGS	=	-Wall -Wextra -Werror -I ..
 
-# Find all test source files and derive object names and targets
-SRC     =	$(wildcard test_ft_*.c)
-OBJ     =	$(SRC:.c=.o)
-TARGET =	$(SRC:.c=)
+# 3) Path to your compiled libft library
+LIBFT	=	../libft.a
 
-# Default rule: build all test executables
-all:	$(TARGET)
+# 4) Gather all test sources and derive object + binary names
+SRC		=	$(wildcard test_ft_*.c)
+OBJ		=	$(SRC:.c=.o)
+BIN		=	$(SRC:.c=)
 
-# Build each test executable, linking against libft.a
-# $<  = the .o file, $@ = the target (executable)
-%:	%.o $(LIBFT)
-	ar rcs $(LIBFT) $(LIBFT)    # dummy archive update to enforce dependency
+.PHONY: all clean
+
+# 5) Default target: build every test executable
+all:	$(BIN)
+
+# 6) Link each test binary against libft.a
+#    “test_ft_atoi” depends on “test_ft_atoi.o” and “../libft.a”
+test_ft_%: test_ft_%.o $(LIBFT)
 	$(CC) $(CFLAGS) $< $(LIBFT) -o $@
 
-# Compile a .c file into a .o object
+# 7) Compile each .c into .o
 %.o:	%.c
-	$(CC) $(CFLAGS) $(INC) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
-# Remove all generated object files and executables
+# 8) Clean up everything this Makefile generates
 clean:
-	rm -f $(OBJ) $(TARGET)
+	rm -f $(OBJ) $(BIN)
 
-.PHONY:	all clean

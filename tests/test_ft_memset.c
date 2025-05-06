@@ -6,7 +6,7 @@
 /*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 11:49:03 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/06 12:59:38 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/06 20:08:09 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 int	main(void)
 {
-	char	buf1[10];
-	char	buf2[10];
-	unsigned char	bin1[] = { 0xAA, 0xBB, 0xCC, 0xDD, 0xEE };
+	char			buf1[10];
+	char			buf2[10];
 	unsigned char	bin2[5];
-	size_t	i;
+	size_t			i;
 
 	/* 1. Zero length: no change */
 	strcpy(buf1, "123456789");
@@ -26,7 +25,7 @@ int	main(void)
 	ft_memset(buf1, 'X', 0);
 	assert(strcmp(buf1, buf2) == 0);
 
-	/* 2. Fill full buffer including ’\0’ */
+	/* 2. Fill full buffer including '\0' */
 	ft_memset(buf1, 'A', sizeof(buf1));
 	for (i = 0; i < sizeof(buf1); i++)
 		assert(buf1[i] == 'A');

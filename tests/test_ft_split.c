@@ -6,7 +6,7 @@
 /*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 11:49:14 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/06 12:59:23 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/06 20:09:24 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ static void	free_split(char **arr)
 int	main(void)
 {
 	char	**res;
-	size_t	i;
 
 	/* 1. Basic split on spaces */
 	res = ft_split("hello world test", ' ');

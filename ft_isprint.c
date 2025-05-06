@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
+/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:09:29 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/02 23:03:04 by antoniocoss      ###   ########.fr       */
+/*   Updated: 2025/05/06 20:56:38 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@
  */
 int	ft_isprint(int c)
 {
-	return (c >= 0 && c <= 126);
+	unsigned char uc = (unsigned char)c;
+	return (uc >= ' ' && uc <= '~');
 }

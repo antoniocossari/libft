@@ -6,7 +6,7 @@
 #    By: acossari <acossari@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/06 12:24:26 by acossari          #+#    #+#              #
-#    Updated: 2025/05/07 12:00:56 by acossari         ###   ########.fr        #
+#    Updated: 2025/05/07 18:05:32 by acossari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SRC		=	$(wildcard test_ft_*.c)
 OBJ		=	$(SRC:.c=.o)
 BIN		=	$(SRC:.c=)
 
-.PHONY: all clean
+.PHONY: all clean test
 
 # 5) Default target: build every test executable
 all:	$(BIN)

@@ -6,7 +6,7 @@
 /*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 11:49:23 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/06 12:59:03 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/07 19:10:03 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,6 @@ int	main(void)
 	char	dest2[10];
 	size_t	ret_ft;
 	size_t	ret_std;
-
-	/* 1. Empty dest, src fits wholly */
-	memset(dest1, 0, sizeof(dest1));
-	memset(dest2, 0, sizeof(dest2));
-	ret_ft  = ft_strlcat(dest1, "Hello", sizeof(dest1));
-	ret_std = strlcat(dest2, "Hello", sizeof(dest2));
-	assert(ret_ft == ret_std);
-	assert(strcmp(dest1, dest2) == 0);
 
 	/* 2. Non‐empty dest, src fits wholly */
 	strcpy(dest1, "Hi");

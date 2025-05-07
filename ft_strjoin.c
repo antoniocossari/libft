@@ -3,25 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
+/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 18:44:46 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/04 13:04:56 by antoniocoss      ###   ########.fr       */
+/*   Updated: 2025/05/07 18:32:52 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 /*
- * ft_strjoin:
- *   Allocate (with malloc) and return a new string
- *   which is the concatenation of `s1` and `s2`.
- *   Returns NULL if the allocation fails.
- */
+** ft_strjoin – concatenate s1 and s2 into a freshly allocated string.
+** Returns the new string, or NULL on allocation failure.
+*/
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	len1;
 	size_t	len2;
 	char	*res;
+	size_t	i;
 
 	if (!s1 || !s2)
 		return (NULL);
@@ -30,7 +30,17 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	res = malloc(len1 + len2 + 1);
 	if (!res)
 		return (NULL);
-	ft_strlcpy(res, s1, len1 + 1);
-	ft_strlcat(res, s2, len1 + len2 + 1);
+	i = 0;
+	while (i < len1)
+	{
+		res[i] = s1[i];
+		i++;
+	}
+	while (i - len1 < len2)
+	{
+		res[i] = s2[i - len1];
+		i++;
+	}
+	res[i] = '\0';
 	return (res);
 }

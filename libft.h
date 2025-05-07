@@ -6,7 +6,7 @@
 /*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:08:02 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/06 13:11:12 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/07 15:16:50 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,17 @@
 # include <stddef.h>   /* size_t */
 # include <stdlib.h>   /* malloc, free */
 # include <unistd.h>   /* write */
+
+/*
+** Bonus: Linked List Structure 
+*/
+
+/* Defines a single-linked list node */
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 /*
 ** Part 1: Core Functions
@@ -30,7 +41,7 @@ int		ft_isprint(int c);
 
 /* Memory operations */
 void	ft_bzero(void *s, size_t n);
-void    *ft_memset(void *b, int c, size_t len);
+void	*ft_memset(void *b, int c, size_t len);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);

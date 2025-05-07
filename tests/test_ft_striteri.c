@@ -6,7 +6,7 @@
 /*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 11:49:19 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/06 12:59:11 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/07 12:31:57 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	main(void)
 	/* 3. Mixed case → alternating */
 	str = strdup("HeLlOWoRlD");
 	assert(str != NULL);
-	expected = strdup("HELLoWoRLd");
+	expected = strdup("HeLlOwOrLd");
 	ft_striteri(str, to_upper_even);
 	assert(strcmp(str, expected) == 0);
 	free(str);
@@ -58,9 +58,6 @@ int	main(void)
 	assert(strcmp(str, expected) == 0);
 	free(str);
 	free(expected);
-
-	/* 5. Null pointer should do nothing (undefined behavior allowed by libft?) */
-	/* We skip ft_striteri(NULL, func) as behavior is undefined in subject */
 
 	return (0);
 }

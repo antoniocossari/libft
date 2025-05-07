@@ -6,7 +6,7 @@
 #    By: acossari <acossari@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/06 12:24:26 by acossari          #+#    #+#              #
-#    Updated: 2025/05/06 20:06:03 by acossari         ###   ########.fr        #
+#    Updated: 2025/05/07 12:00:56 by acossari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,4 +44,3 @@ test_ft_%: test_ft_%.o $(LIBFT)
 # 8) Clean up everything this Makefile generates
 clean:
 	rm -f $(OBJ) $(BIN)
-

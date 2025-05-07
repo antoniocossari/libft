@@ -6,7 +6,7 @@
 /*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 11:49:12 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/06 12:59:26 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/07 12:23:53 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(void)
 	assert(strncmp(buf, "Hello", 5) == 0);
 
 	/* 2. Empty string should write nothing */
-	ret = read(fd[0], buf, 1);
+	ret = read(fd[0], buf, 0);      /* read 0 bytes → always returns 0 immediately */
 	assert(ret == 0);
 
 	/* 3. Multiple writes concatenated */

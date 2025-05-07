@@ -6,7 +6,7 @@
 /*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 11:49:27 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/06 12:58:46 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/07 12:34:11 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,16 @@ int	main(void)
 	free(res);
 
 	/* 2. Simple mapping */
-	/* "abcd" → "a"->'a'+0, "b"->'b'+1, ... = "ac\'f" */
-	expected = strdup("acfh");
+	/* "abcd" → 'a'+0='a', 'b'+1='c', 'c'+2='e', 'd'+3='g' = "aceg" */
+	expected = strdup("aceg");
 	res = ft_strmapi("abcd", add_index);
 	assert(res != NULL && strcmp(res, expected) == 0);
 	free(res);
 	free(expected);
 
 	/* 3. Mixed characters */
-	expected = strdup("A`eg");
-	/* 'A'+0 = 'A'; 'b'+1 = 'c'; 'c'+2 = 'e'; 'd'+3 = 'g' */
+	/* 'A'+0='A', 'b'+1='c', 'c'+2='e', 'd'+3='g' = "Aceg" */
+	expected = strdup("Aceg");
 	res = ft_strmapi("Abcd", add_index);
 	assert(res != NULL && strcmp(res, expected) == 0);
 	free(res);

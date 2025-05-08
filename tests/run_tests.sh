@@ -6,7 +6,7 @@
 #    By: acossari <acossari@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/07 13:17:13 by acossari          #+#    #+#              #
-#    Updated: 2025/05/07 13:20:48 by acossari         ###   ########.fr        #
+#    Updated: 2025/05/08 12:07:57 by acossari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,11 +28,20 @@ for exe in ./test_ft_*; do
   # Print test name
   printf "👉 Running %-20s ... " "${exe#./}"
   
-  # Run the test; capture success/failure
+  # 1) Run the test; capture success/failure
   if "./$exe"; then
     printf "${GREEN}OK${RESET}\n"
   else
     printf "${RED}FAIL${RESET}\n"
+    exit 1
+  fi
+
+  # 2) Run the mem test (Valgrind)
+  printf " 🧠 (Memcheck) 🧠 "
+  if valgrind --leak-check=full --show-leak-kinds=all --error-exitcode=1 ./"$exe" &> /dev/null; then
+    printf "${GREEN}OK${RESET}\n"
+  else
+    printf "${RED}MEMORY ERRORS${RESET}\n"
     exit 1
   fi
 done

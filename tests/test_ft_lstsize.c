@@ -12,24 +12,31 @@
 
 #include "tests.h"
 
-int	main(void)
+/*
+ * Test for ft_lstsize – returns the number of nodes in a list
+ */
+int main(void)
 {
+	t_list *list = NULL;
+
 	/* 1. Empty list should have size 0 */
-	t_list	*list = NULL;
 	assert(ft_lstsize(list) == 0);
 
-	/* 2. Single node list should have size 1 */
-	t_list	*n1 = ft_lstnew("one");
+	/* 2. Single-node list should have size 1 */
+	char *s1 = strdup("one");
+	t_list *n1 = ft_lstnew(s1);
 	list = n1;
 	assert(ft_lstsize(list) == 1);
 
 	/* 3. Two-node list should have size 2 */
-	t_list	*n2 = ft_lstnew("two");
+	char *s2 = strdup("two");
+	t_list *n2 = ft_lstnew(s2);
 	ft_lstadd_back(&list, n2);
 	assert(ft_lstsize(list) == 2);
 
 	/* 4. Three-node list should have size 3 */
-	t_list	*n3 = ft_lstnew("three");
+	char *s3 = strdup("three");
+	t_list *n3 = ft_lstnew(s3);
 	ft_lstadd_back(&list, n3);
 	assert(ft_lstsize(list) == 3);
 
@@ -37,5 +44,8 @@ int	main(void)
 	assert(list->next == n2);
 	assert(list->next->next == n3);
 
-	return (0);
+	/* Free all nodes and their content to avoid memory leaks */
+	free_list(list);
+
+	return 0;
 }

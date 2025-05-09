@@ -12,12 +12,12 @@
 
 #include "tests.h"
 
-int	main(void)
+int main(void)
 {
-	t_list	*list = NULL;
-	t_list	*n1 = ft_lstnew("first");
-	t_list	*n2 = ft_lstnew("second");
-	t_list	*n3 = ft_lstnew("third");
+	t_list  *list = NULL;
+	t_list  *n1   = ft_lstnew(strdup("first"));
+	t_list  *n2   = ft_lstnew(strdup("second"));
+	t_list  *n3   = ft_lstnew(strdup("third"));
 
 	/* 1. Adding to empty list sets head to new node */
 	ft_lstadd_back(&list, n1);
@@ -40,6 +40,9 @@ int	main(void)
 	/* 5. Passing NULL new node does not change list */
 	ft_lstadd_back(&list, NULL);
 	assert(ft_lstsize(list) == 3);
+
+	/* Libera tutta la lista e i contenuti per evitare leak */
+	free_list(list);
 
 	return (0);
 }

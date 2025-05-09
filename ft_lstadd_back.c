@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+
 /*
  * ft_lstadd_back – add the node ’new’ at the end of the list
  * @lst:  address of the pointer to the first element of the list
@@ -18,6 +19,7 @@
  *
  * If the list is empty, new becomes the first node.
  * Otherwise, find the last node and set its next to new.
+ * Always sets new->next = NULL to avoid dangling pointers.
  */
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
@@ -25,6 +27,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (!lst || !new)
 		return ;
+	new->next = NULL;
 	if (*lst == NULL)
 	{
 		*lst = new;
@@ -35,4 +38,3 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		last->next = new;
 	}
 }
-

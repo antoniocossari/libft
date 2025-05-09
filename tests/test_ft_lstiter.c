@@ -12,42 +12,51 @@
 
 #include "tests.h"
 
-static void	increment(void *content)
+/*
+ * increment – helper that increments an integer
+ */
+static void increment(void *content)
 {
-	(*(int *)content)++;
+    (*(int *)content)++;
 }
 
-int	main(void)
+int main(void)
 {
-	/* Function: ft_lstiter – apply a function to each element’s content */
+    /* 1. NULL list does nothing */
+    int x = 0;
+    ft_lstiter(NULL, increment);
+    assert(x == 0);
 
-	/* 1. NULL list does nothing */
-	int	x = 0;
-	ft_lstiter(NULL, increment);
-	assert(x == 0);
+    /* allocate integers on the heap for safe freeing */
+    int *a = malloc(sizeof(int));
+    int *b = malloc(sizeof(int));
+    int *c = malloc(sizeof(int));
+    *a = 10;
+    *b = 20;
+    *c = 30;
 
-	/* 2. NULL function pointer does nothing */
-	int	a = 10;
-	t_list	*n1 = ft_lstnew(&a);
-	ft_lstiter(n1, NULL);
-	assert(a == 10);
+    /* 2. NULL function pointer does nothing */
+    t_list *n1 = ft_lstnew(a);
+    ft_lstiter(n1, NULL);
+    assert(*a == 10);
 
-	/* 3. Single-node list is modified once */
-	ft_lstiter(n1, increment);
-	assert(a == 11);
+    /* 3. Single-node list is modified once */
+    ft_lstiter(n1, increment);
+    assert(*a == 11);
 
-	/* 4. Multi-node list: each element is modified */
-	int	b = 20;
-	int	c = 30;
-	ft_lstadd_back(&n1, ft_lstnew(&b));
-	ft_lstadd_back(&n1, ft_lstnew(&c));
-	ft_lstiter(n1, increment);
-	assert(a == 12);
-	assert(b == 21);
-	assert(c == 31);
+    /* 4. Multi-node list: each element is modified */
+    ft_lstadd_back(&n1, ft_lstnew(b));
+    ft_lstadd_back(&n1, ft_lstnew(c));
+    ft_lstiter(n1, increment);
+    assert(*a == 12);
+    assert(*b == 21);
+    assert(*c == 31);
 
-	/* 5. List structure remains intact */
-	assert(n1->next->next->next == NULL);
+    /* 5. List structure remains intact */
+    assert(n1->next->next->next == NULL);
 
-	return (0);
+    /* free all the nodes and their content to avoid memory leaks */
+    free_list(n1);
+
+    return 0;
 }

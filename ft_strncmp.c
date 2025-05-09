@@ -12,19 +12,26 @@
 
 #include "libft.h"
 /*
- * ft_strncmp:
- *   Compare up to `n` characters of `s1` and `s2` using unsigned bytes.
- *   Bytes after a NUL in either string are not compared.
- *   Return <0 if `s1`<`s2`, 0 if equal, >0 if `s1`>`s2`.
+ * ft_strncmp – compare up to n characters of s1 and s2 (unsigned)
+ *              returns <0, 0 or >0 exactly as the system strncmp.
+ *              stops at the first differing byte or at NUL, never reads past.
  */
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
+	size_t          i;
+	unsigned char   c1;
+	unsigned char   c2;
 
-	if (n == 0)
-		return (0);
 	i = 0;
-	while (i < n - 1 && s1[i] && s1[i] == s2[i])
+	while (i < n)
+	{
+		c1 = (unsigned char)s1[i];
+		c2 = (unsigned char)s2[i];
+		if (c1 != c2)
+			return (c1 - c2);
+		if (c1 == '\0')
+			return 0;
 		i++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	}
+	return 0;
 }

@@ -12,50 +12,35 @@
 
 #include "tests.h"
 
-int	main(void)
+/*
+ * tests for ft_strncmp – no dynamic memory, all literals
+ */
+int main(void)
 {
-	char	s1[] = "abcdef";
-	char	s2[] = "abcdef";
-	char	s3[] = "abcdez";
-	char	s4[] = "abcd";
-	char	s5[] = "abc";
-	size_t	ret_ft;
-	size_t	ret_std;
+    /* 1. n = 0 should always return 0 */
+    assert(ft_strncmp("foo", "bar", 0) == strncmp("foo", "bar", 0));
 
-	/* 1. n = 0 → always equal */
-	ret_ft  = ft_strncmp(s1, s3, 0);
-	ret_std = strncmp(s1, s3, 0);
-	assert(ret_ft == ret_std);
+    /* 2. Equal strings */
+    assert(ft_strncmp("", "", 1) == strncmp("", "", 1));
+    assert(ft_strncmp("abc", "abc", 3) == strncmp("abc", "abc", 3));
 
-	/* 2. identical strings */
-	ret_ft  = ft_strncmp(s1, s2, 6);
-	ret_std = strncmp(s1, s2, 6);
-	assert(ret_ft == 0 && ret_std == 0);
+    /* 3. Difference within n */
+    assert(ft_strncmp("abc", "abd", 3) == strncmp("abc", "abd", 3));
+    assert(ft_strncmp("abd", "abc", 3) == strncmp("abd", "abc", 3));
 
-	/* 3. difference within n: 'f'(102) < 'z'(122) → negative */
-	ret_ft  = ft_strncmp(s1, s3, 6);
-	ret_std = strncmp(s1, s3, 6);
-	assert((ret_ft < 0 && ret_std < 0) || (ret_ft > 0 && ret_std > 0));
+    /* 4. Difference beyond n (should not compare) */
+    assert(ft_strncmp("abcX", "abcY", 3) == strncmp("abcX", "abcY", 3));
 
-	/* 4. reverse order → positive */
-	ret_ft  = ft_strncmp(s3, s1, 6);
-	ret_std = strncmp(s3, s1, 6);
-	assert((ret_ft < 0 && ret_std < 0) || (ret_ft > 0 && ret_std > 0));
+    /* 5. n larger than both lengths (stop at NUL) */
+    assert(ft_strncmp("abc", "abc", 10) == strncmp("abc", "abc", 10));
 
-	/* 5. n shorter than mismatch point: prefix equal */
-	ret_ft  = ft_strncmp(s1, s3, 3);
-	ret_std = strncmp(s1, s3, 3);
-	assert(ret_ft == 0 && ret_std == 0);
+    /* 6. One empty, one non-empty */
+    assert(ft_strncmp("", "a", 1) == strncmp("", "a", 1));
+    assert(ft_strncmp("a", "", 1) == strncmp("a", "", 1));
 
-	/* 6. comparing up to len of shorter string */
-	ret_ft  = ft_strncmp(s1, s4, 6);
-	ret_std = strncmp(s1, s4, 6);
-	assert((ret_ft > 0 && ret_std > 0) || (ret_ft < 0 && ret_std < 0));
+    /* 7. Partial compares */
+    assert(ft_strncmp("hello", "helium", 3) == strncmp("hello", "helium", 3));
+    assert(ft_strncmp("hello", "helium", 4) == strncmp("hello", "helium", 4));
 
-	/* 7. one string shorter, n larger than both lengths */
-	ret_ft  = ft_strncmp(s4, s5, 10);
-	ret_std = strncmp(s4, s5, 10);
-	assert((ret_ft > 0 && ret_std > 0) || (ret_ft < 0 && ret_std < 0));
-
-	return (0);
+    return 0;
 }

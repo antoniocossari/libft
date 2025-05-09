@@ -17,7 +17,7 @@
 
 # 2) Compiler settings (include parent dir for libft.h)
 CC		=	cc
-CFLAGS	=	-Wall -Wextra -Werror -I ..
+CFLAGS  =   -Wall -Wextra -Werror -I ..
 
 # 3) Path to your compiled libft library
 LIBFT	=	../libft.a

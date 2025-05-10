@@ -18,6 +18,8 @@
  */
 int	ft_isprint(int c)
 {
-	unsigned char uc = (unsigned char)c;
-	return (uc >= ' ' && uc <= '~');
+	unsigned char	uc;
+
+	uc = (unsigned char)c;
+	return (uc >= 32 && uc <= 126);
 }

@@ -12,12 +12,12 @@
 
 #include "libft.h"
 /*
- * ft_lstiter – iterate over a list and apply a function to each element’s content
+ * ft_lstiter – iterate a list and apply a function to each element’s content
  * @lst: pointer to the first element of the list
- * @f:   function to apply to the content of each node
+ * @f:   function to apply to each node’s content
  *
- * Applies the function f to the content of each node in the list,
- * in order from the first to the last. Does nothing if lst or f is NULL.
+ * For each node in the list, from first to last, calls f(node->content).
+ * Does nothing if lst or f is NULL.
  */
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {

@@ -13,16 +13,15 @@
 #include "libft.h"
 /*
  * ft_toupper:
- *   If c is a lowercase ASCII letter, return its uppercase equivalent.
- *   If c is negative, return c unchanged.
- *   Otherwise return c unchanged.
+ *   Convert lowercase letter `c` to uppercase if it is in 'a'–'z'.
+ *   Returns `c` unchanged otherwise.
  */
 int	ft_toupper(int c)
 {
-	if (c < 0)
-		return c;
-	unsigned char uc = (unsigned char)c;
+	unsigned char	uc;
+
+	uc = (unsigned char)c;
 	if (uc >= 'a' && uc <= 'z')
-		return (int)(uc - ('a' - 'A'));
-	return (int)uc;
+		return (uc - 'a' + 'A');
+	return (c);
 }

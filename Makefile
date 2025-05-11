@@ -37,9 +37,9 @@ SRCS	=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 OBJS	=	$(SRCS:.c=.o)
 
 # Bonus source files (.c) for linked-list functions
-BONUS_SRCS	=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
-	ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
-	ft_lstclear.c ft_lstiter.c ft_lstmap.c
+BONUS_SRCS	=	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
+	ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
+	ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
 # Object files (.o) for bonus sources
 BONUS_OBJS	=	$(BONUS_SRCS:.c=.o)
@@ -53,7 +53,7 @@ $(NAME):	$(OBJS)
 
 # Rule to build the library including bonus objects
 bonus:	$(OBJS) $(BONUS_OBJS)
-	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+	ar rcs $(NAME) $^
 
 # Pattern rule: compile any .c into corresponding .o
 # $< is the first prerequisite (the .c file), $@ is the target (.o file)

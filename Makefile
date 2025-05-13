@@ -6,14 +6,14 @@
 #    By: acossari <acossari@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/24 16:21:57 by acossari          #+#    #+#              #
-#    Updated: 2025/05/07 15:20:48 by acossari         ###   ########.fr        #
+#    Updated: 2025/05/13 12:53:57 by acossari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Name of the static library to create
 NAME	=	libft.a
 
-# Compiler to use (cc is the standard compiler at 42)
+# Compiler to use
 CC	=	cc
 
 # Compiler flags:
@@ -47,7 +47,15 @@ BONUS_OBJS	=	$(BONUS_SRCS:.c=.o)
 # Default target: builds the library when you run `make`
 all:	$(NAME)
 
+# Automatic variables:
+#	$@ expands to the current target
+#	$^ expands to all prerequisites
+#	$< expands to the first prerequsite
+
 # Rule to create the library archive from object files
+#	r: replace or insert files into the archive
+#	c: create the archive if it doesn’t exist
+#	s: write an index (symbol table) for faster linking
 $(NAME):	$(OBJS)
 	ar rcs $@ $^
 
@@ -56,11 +64,17 @@ bonus:	$(OBJS) $(BONUS_OBJS)
 	ar rcs $(NAME) $^
 
 # Pattern rule: compile any .c into corresponding .o
-# $< is the first prerequisite (the .c file), $@ is the target (.o file)
+#	% is make’s pattern metacharacter capturing the “stem” (base filename)
+#	for each stem.c it generates stem.o in a 1:1 correspondence
+
+# Compiler flags:
+#	-c: compile only: generate .o files without linking
+#	-o: specify output file name for the generated file
 %.o:	%.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Remove all object files (mandatory and bonus)
+# 	-f: suppresses errors if files are missing
 clean:
 	rm -f $(OBJS) $(BONUS_OBJS)
 

@@ -1,0 +1,17 @@
+# Build artifacts
+*.o
+libft.a
+
+# Test outputs
+*.out
+*.log
+
+# MacOS
+.DS_Store
+
+# Vim swap/files
+*.swp
+*.swo
+
+# Visual Studio Codeß
+.vscode/

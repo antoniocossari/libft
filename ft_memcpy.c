@@ -3,20 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
+/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:09:47 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/02 23:14:41 by antoniocoss      ###   ########.fr       */
+/*   Updated: 2025/05/14 13:26:14 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /*
- * ft_memcmp:
- *   Compare the first `n` bytes of `s1` and `s2`.
- *   Return a negative value if `s1` is less than `s2`,
- *   zero if they are equal, or a positive value if `s1` is greater.
- */
+** ft_memcpy: copy n bytes from src to dst
+** @dst: destination memory area
+** @src: source memory area
+** @n: number of bytes to copy
+** Return: pointer to dst
+*/
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t				i;

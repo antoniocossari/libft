@@ -6,36 +6,32 @@
 /*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:10:40 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/05 19:58:08 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/14 15:34:02 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /*
- * ft_strnstr:
- *   Locate the first occurrence of the null-terminated string `little`
- *   within `big`, searching at most `len` characters. If `little` is
- *   empty, return `big`; if not found within the first `len` bytes,
- *   return NULL.
- */
+** ft_strnstr: locate first occurrence of needle in haystack
+** @haystack: string to search in (NUL-terminated)
+** @needle:   substring to find
+** @len:      maximum number of characters to search
+** Return: pointer to start of needle in haystack, or NULL if not found;
+**         if needle is empty, return haystack
+*/
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	i;
-	size_t	j;
+	size_t	needle_len;
 
 	if (*needle == '\0')
 		return ((char *)haystack);
-	i = 0;
-	while (i < len && haystack[i])
+	needle_len = ft_strlen(needle);
+	while (*haystack && len >= needle_len)
 	{
-		j = 0;
-		while (i + j < len
-			&& needle[j]
-			&& haystack[i + j] == needle[j])
-			j++;
-		if (needle[j] == '\0')
-			return ((char *)haystack + i);
-		i++;
+		if (ft_strncmp(haystack, needle, needle_len) == 0)
+			return ((char *)haystack);
+		haystack++;
+		len--;
 	}
 	return (NULL);
 }

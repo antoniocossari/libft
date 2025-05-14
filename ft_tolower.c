@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
+/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:10:54 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/02 23:41:17 by antoniocoss      ###   ########.fr       */
+/*   Updated: 2025/05/14 13:42:14 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /*
- * ft_tolower:
- *   Convert uppercase letter `c` to lowercase if it is in 'A'–'Z'.
- *   Returns `c` unchanged otherwise.
- */
+** ft_tolower: convert uppercase letter to lowercase
+** @c: the character to convert
+** Return: lowercase equivalent if 'A'–'Z', else unchanged
+*/
 int	ft_tolower(int c)
 {
 	unsigned char	uc;

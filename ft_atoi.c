@@ -6,17 +6,17 @@
 /*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:08:16 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/05 19:57:47 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/14 15:43:46 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /*
- * ft_itoa:
- *   Convert the integer `n` into a null-terminated string.
- *   Handles zero by returning "0" and negative values by prepending '-'.
- *   Allocates memory with malloc; the caller is responsible for freeing.
- */
+** ft_atoi: convert string to integer
+** @str: the null-terminated string to convert
+** Return: the parsed integer value; handles optional leading whitespace,
+**         an optional '+' or '-' sign, and consecutive digits
+*/
 int	ft_atoi(const char *str)
 {
 	long	result;

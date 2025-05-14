@@ -3,30 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
+/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:10:03 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/02 23:30:34 by antoniocoss      ###   ########.fr       */
+/*   Updated: 2025/05/14 14:34:36 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /*
- * ft_strchr:
- *   Locate the first occurrence of character `c` (converted to `char`)
- *   in the null-terminated string `s`. The terminating byte ‘\0’ is
- *   considered part of the string. Returns a pointer to the matching
- *   byte or NULL if `c` is not found. 
- */
+** ft_strchr: locate first occurrence of character c in string s
+** @s:   null-terminated source string
+** @c:   character to find (converted to char)
+** Return: pointer to byte in s, or NULL if not found
+*/
 char	*ft_strchr(const char *s, int c)
 {
+	char	ch;
+
+	ch = (char)c;
 	while (*s)
 	{
-		if (*s == (char)c)
+		if (*s == ch)
 			return ((char *)s);
 		s++;
 	}
-	if ((char)c == '\0')
+	if (ch == '\0')
 		return ((char *)s);
 	return (NULL);
 }

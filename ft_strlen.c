@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
+/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:10:27 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/02 23:35:09 by antoniocoss      ###   ########.fr       */
+/*   Updated: 2025/05/13 14:11:41 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /*
- * ft_strlen:
- *   Return the number of characters in the string `s`,
- *   not including the terminating NUL byte.
- */
+** ft_strlen: return the number of characters in string s
+** @s: the string to measure
+** Return: the length of s, not including the terminating '\0'
+*/
 size_t	ft_strlen(const char *s)
 {
 	size_t	len;

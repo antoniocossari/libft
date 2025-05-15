@@ -3,29 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
+/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 18:03:07 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/02 23:35:31 by antoniocoss      ###   ########.fr       */
+/*   Updated: 2025/05/15 12:24:08 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// char to_upper_even(unsigned int i, char c)
-// {
-// 	// Se l’indice è pari e c è una lettera minuscola, la trasformo in maiuscola
-// 	if (i % 2 == 0 && c >= 'a' && c <= 'z')
-// 		return (c - 'a' + 'A');
-// 	// altrimenti lascio c invariato
-// 	return (c);
-// }
-
 /*
- * ft_strmapi:
- *   Apply function `f` to each character of `s`, with index `i`,
- *   and return a new malloc’ed string of the results.
- */
+** ft_strmapi: apply a function to each character of a string
+** @s: the null-terminated input string
+** @f: function taking index and char, returning a new char
+** Return: newly allocated string (must be freed),
+**         or NULL if allocation fails or inputs are NULL
+*/
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t			len;
@@ -47,22 +39,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	res[i] = '\0';
 	return (res);
 }
-
-// int main(void)
-// {
-// 	char	*s = "abcdef";
-// 	char	*t;
-
-// 	t = ft_strmapi(s, to_upper_even);
-// 	if (!t)
-// 	{
-// 		perror("ft_strmapi failed");
-// 		return (1);
-// 	}
-
-// 	printf("Originale: %s\n", s);
-// 	printf("Risultato: %s\n", t);
-
-// 	free(t);
-// 	return (0);
-// }

@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoniocossari <antoniocossari@student.    +#+  +:+       +#+        */
+/*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 18:57:15 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/02 23:31:47 by antoniocoss      ###   ########.fr       */
+/*   Updated: 2025/05/15 12:30:23 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /*
- * ft_striteri:
- *   Apply the function `f` to each character of the mutable string `s`,
- *   passing the character’s index and a pointer to `s[i]` for in-place edits.
- *   Does not return a value.
- */
+** ft_striteri: apply a function to each char of a string in-place
+** @s: the null-terminated string to modify
+** @f: function taking index and pointer to char to update
+** Return: none
+*/
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;

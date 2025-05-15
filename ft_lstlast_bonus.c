@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:22:20 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/07 15:26:09 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/15 16:05:05 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /*
- * ft_lstlast – return the last element of the list
- * @lst: pointer to the first element of the list
- *
- * Traverses the list until it reaches a node whose next is NULL,
- * then returns that node. If lst is NULL, returns NULL.
- */
+** ft_lstlast: return the last node of a list
+** @lst: pointer to the first element of the list
+** Return: pointer to the last node, or NULL if the list is empty
+*/
 t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)

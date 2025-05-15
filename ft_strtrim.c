@@ -6,16 +6,18 @@
 /*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 18:50:02 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/05 19:58:11 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/14 21:10:58 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /*
- * ft_strtrim:
- *   Allocate and return a copy of s1 with characters from set
- *   removed from its start and end. Returns NULL if allocation fails.
- */
+** ft_strtrim: allocate and return a trimmed copy of s1
+** @s1:  the source string
+** @set: the set of characters to remove
+** Return: pointer to new string (must be freed),
+**         or NULL if allocation fails
+*/
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;

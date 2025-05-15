@@ -6,16 +6,17 @@
 /*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 19:33:22 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/05 19:58:00 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/15 13:02:44 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /*
- * ft_putendl_fd:
- *   Write the string `s` to the file descriptor `fd`,
- *   then write a newline character. Does nothing if `s` is NULL.
- */
+** ft_putendl_fd: write a string and a newline to a given file descriptor
+** @s:  the null-terminated string to write
+** @fd: the file descriptor on which to write
+** Return: none
+*/
 void	ft_putendl_fd(char *s, int fd)
 {
 	if (!s)

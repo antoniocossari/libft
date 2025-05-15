@@ -6,18 +6,20 @@
 /*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 18:24:30 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/05 19:58:10 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/14 20:48:05 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /*
- * ft_substr:
- *   Allocate and return a substring from `s`,
- *   starting at `start` for up to `len` characters.
- *   Returns an empty string if `start` is beyond `s`’s length,
- *   or NULL on allocation failure.
- */
+** ft_substr: allocate and return a substring from s
+** @s:     the source string
+** @start: index of first character in substring
+** @len:   max length of substring
+** Return: new string (must be freed),
+**         empty string if start ≥ strlen(s),
+**         or NULL if allocation fails
+*/
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
@@ -31,7 +33,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = 0;
 	else if (s_len - start < len)
 		len = s_len - start;
-	substr = (char *)malloc(len + 1);
+	substr = malloc(len + 1);
 	if (!substr)
 		return (NULL);
 	i = 0;

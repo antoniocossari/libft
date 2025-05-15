@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:22:21 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/07 15:29:50 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/15 16:38:45 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /*
- * ft_lstmap – create a new list by applying a function to each element’s content
- * @lst: pointer to the first element of the source list
- * @f:   function to apply to the content of each node
- * @del: function to free the content of a node in case of allocation failure
- *
- * Iterates through the source list and applies f to each content,
- * allocating a new node for the result. If allocation fails at any point,
- * uses del to clear the new list and returns NULL.
- */
+** ft_lstmap: create a new list by applying a function to each node’s content
+** @lst: pointer to the first element of the source list
+** @f:   function to transform each node’s content
+** @del: function to free content on failure
+** Return: pointer to the new list (must be freed with ft_lstclear),
+**         or NULL if allocation fails or inputs are NULL
+*/
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;

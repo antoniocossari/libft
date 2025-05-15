@@ -6,41 +6,35 @@
 /*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 18:44:46 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/07 18:32:52 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/14 20:56:01 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 /*
-** ft_strjoin – concatenate s1 and s2 into a freshly allocated string.
-** Returns the new string, or NULL on allocation failure.
+** ft_strjoin: concatenate s1 and s2 into a new string
+** @s1:    first null-terminated string
+** @s2:    second null-terminated string
+** Return: pointer to the fresh string (must be freed),
+**         or NULL if allocation fails or inputs are NULL
 */
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	len1;
-	size_t	len2;
+	size_t	total;
 	char	*res;
-	size_t	i;
+	char	*dst;
 
 	if (!s1 || !s2)
 		return (NULL);
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	res = malloc(len1 + len2 + 1);
+	total = ft_strlen(s1) + ft_strlen(s2);
+	res = malloc(total + 1);
 	if (!res)
 		return (NULL);
-	i = 0;
-	while (i < len1)
-	{
-		res[i] = s1[i];
-		i++;
-	}
-	while (i - len1 < len2)
-	{
-		res[i] = s2[i - len1];
-		i++;
-	}
-	res[i] = '\0';
+	dst = res;
+	while (*s1)
+		*dst++ = *s1++;
+	while (*s2)
+		*dst++ = *s2++;
+	*dst = '\0';
 	return (res);
 }

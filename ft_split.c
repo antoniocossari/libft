@@ -6,17 +6,18 @@
 /*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 18:52:15 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/06 13:18:12 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/15 10:52:41 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
- * word_len:
- *   returns the number of characters until the next delimiter or
- *   end‐of‐string
- */
+** word_len: returns the number of characters until the next delimiter c
+** @s: pointer to the start of the word
+** @c: delimiter character
+** Return: length of the word (count of non-delimiter characters)
+*/
 static size_t	word_len(const char *s, char c)
 {
 	size_t	len;
@@ -27,9 +28,12 @@ static size_t	word_len(const char *s, char c)
 	return (len);
 }
 
-/* count_words:
- *   counts the number of words in s separated by the delimiter c
- */
+/*
+** count_words: counts the number of words in s separated by delimiter c
+** @s: null-terminated string to scan
+** @c: delimiter character
+** Return: number of words found
+*/
 static size_t	count_words(const char *s, char c)
 {
 	size_t	i;
@@ -51,22 +55,33 @@ static size_t	count_words(const char *s, char c)
 	return (count);
 }
 
-/* free_split:
- *   frees all previously allocated words in case of an allocation failure
- */
+/*
+** free_split: frees allocated words on error and the array itself
+** @arr: array of strings to free
+** @used: number of elements successfully allocated
+** Return: NULL always
+*/
 static char	**free_split(char **arr, size_t used)
 {
-	while (used-- > 0)
-		free(arr[used]);
+	size_t	i;
+
+	i = 0;
+	while (i < used)
+	{
+		free(arr[i]);
+		i++;
+	}
 	free(arr);
 	return (NULL);
 }
 
 /*
- * ft_split:
- *   Split the string `s` into an array of substrings using `c` as delimiter.
- *   Uses ft_substr to allocate and copy each word.
- */
+** ft_split: split a string into an array of substrings
+** @s: the null-terminated string to split
+** @c: delimiter character
+** Return: array of substrings (must be freed),
+**         terminated by NULL, or NULL on allocation failure
+*/
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
@@ -87,8 +102,9 @@ char	**ft_split(char const *s, char c)
 		while (s[i] && s[i] == c)
 			i++;
 		arr[w] = ft_substr(s, i, word_len(s + i, c));
-		if (!arr[w++])
-			return (free_split(arr, w - 1));
+		if (arr[w] == NULL)
+			return (free_split(arr, w));
+		w++;
 		i += word_len(s + i, c);
 	}
 	arr[w] = NULL;

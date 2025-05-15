@@ -6,15 +6,17 @@
 /*   By: acossari <acossari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 18:53:27 by acossari          #+#    #+#             */
-/*   Updated: 2025/05/05 19:57:57 by acossari         ###   ########.fr       */
+/*   Updated: 2025/05/15 12:07:56 by acossari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* get_len:
- *   returns how many characters are needed for nbr (incl. '-' e '\0')
- */
+/*
+** get_len: calculate number of characters needed for integer conversion
+** @n: the integer value (as long) to measure
+** Return: digits count + 1 if negative (for '-'), 1 if n == 0
+*/
 static size_t	get_len(long n)
 {
 	size_t	len;
@@ -31,12 +33,11 @@ static size_t	get_len(long n)
 }
 
 /*
- * ft_itoa:
- *   Convert the integer `n` to a null-terminated string.
- *   Handles `0` by returning "0" and negative values by
- *   prepending '-'. Allocates memory with malloc;
- *   caller must free the returned string.
- */
+** ft_itoa: convert an integer to its string representation
+** @n: the integer to convert
+** Return: newly allocated string (must be freed),
+**         or NULL if allocation fails
+*/
 char	*ft_itoa(int n)
 {
 	long	nbr;
@@ -48,17 +49,18 @@ char	*ft_itoa(int n)
 	res = malloc(len + 1);
 	if (!res)
 		return (NULL);
+	if (nbr == 0)
+		res[0] = '0';
 	if (nbr < 0)
 	{
 		res[0] = '-';
 		nbr = -nbr;
 	}
 	res[len] = '\0';
-	if (nbr == 0)
-		res[0] = '0';
 	while (nbr)
 	{
-		res[--len] = '0' + (nbr % 10);
+		len--;
+		res[len] = '0' + (nbr % 10);
 		nbr /= 10;
 	}
 	return (res);
